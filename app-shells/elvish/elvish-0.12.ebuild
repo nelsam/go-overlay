@@ -7,7 +7,6 @@ GOLANG_PKG_IMPORTPATH="github.com/elves"
 GOLANG_PKG_ARCHIVEPREFIX="v"
 GOLANG_PKG_LDFLAGS="-X github.com/elves/elvish/buildinfo.Version=${PV}"
 GOLANG_PKG_HAVE_TEST=1
-GOLANG_PKG_USE_CGO=1
 
 inherit golang-single
 
