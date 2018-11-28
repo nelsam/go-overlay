@@ -22,3 +22,11 @@ src_test() {
 	GOLANG_PKG_IS_MULTIPLE=1
 	golang-single_src_test
 }
+
+pkg_postinst() {
+	if ! grep -q '^/usr/bin/elvish$' "${EROOT}"/etc/shells ; then
+		ebegin "Updating /etc/shells"
+		echo "/usr/bin/elvish" >> "${EROOT}"/etc/shells
+		eend $?
+	fi
+}
